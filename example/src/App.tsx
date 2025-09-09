@@ -1,11 +1,9 @@
 import "./App.css";
 
 import { TipTapExample } from "./TiptapExample";
-import { BlockNoteExample } from "./BlockNoteExample";
 
 function App(props: { id: string }) {
-  const useBlockNote = props.id.startsWith("blocknote");
-  const editor = useBlockNote ? "BlockNote" : "Tiptap";
+  const editor = "Tiptap";
   return (
     <>
       <h1>ProseMirror + Convex Sync</h1>
@@ -25,11 +23,7 @@ function App(props: { id: string }) {
       </div>
       <div className="card">
         <strong>{editor}</strong>
-        {useBlockNote ? (
-          <BlockNoteExample id={props.id + "-blocknote"} />
-        ) : (
-          <TipTapExample id={props.id + "-tiptap"} />
-        )}
+        <TipTapExample id={props.id + "-tiptap"} />
       </div>
       <footer>
         <p className="read-the-docs">

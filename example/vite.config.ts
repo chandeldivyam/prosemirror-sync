@@ -6,5 +6,6 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     conditions: ["@convex-dev/component-source"],
+    dedupe: ["react"],
   },
 });
